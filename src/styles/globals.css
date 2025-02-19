@@ -1,0 +1,26 @@
+:root {
+  --white: #FFF;
+
+  --gray-100: #E1E1E6;
+  --gray-200: #C4C4CC;
+  --gray-300: #8D8D99;
+  --gray-500: #323238;
+  --gray-600: #29292E;
+  --gray-700: #121214;
+  --gray-900: #09090A;
+
+  --green-300: #00B37E;
+  --green-500: #00875F;
+  --green-700: #015F43;
+
+  --red-500: #F75A68;
+  --blue-500: #81D8F7;
+  --orange-500: #FBA94C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
