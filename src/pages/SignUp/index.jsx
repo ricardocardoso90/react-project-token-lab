@@ -10,7 +10,7 @@ export function SignUp() {
 
   return (
     <div className={styles.container}>
-      <span className={styles.title}>TOKENLAB</span>
+      <span className={styles.title}>token<span style={{fontWeight: "bold"}}>lab</span></span>
 
       <div className={styles.box}>
         <span className={styles.subtitle}>Crie sua conta</span>

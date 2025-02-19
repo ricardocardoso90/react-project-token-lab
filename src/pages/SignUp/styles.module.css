@@ -1,6 +1,6 @@
 .container {
   height: 100vh;
-  background-color: var(--gray-500);
+  background-color: var(--white);
 
   display: flex;
   align-items: center;
@@ -9,14 +9,15 @@
 }
 
 .title {
-  font-size: 25px;
-  color: var(--gray-100);
+  font-size: 40px;
+  color: var(--blue-800);
 }
 
 .subtitle {
   font-size: 18px;
+  font-weight: bold;
   margin-bottom: 15px;
-  color: var(--gray-100);
+  color: var(--blue-800);
 }
 
 .box {
@@ -34,9 +35,10 @@
   border: none;
   height: 60px;
   color: white;
+  font-size: 16px;
   border-radius: 8px;
   margin-bottom: 18px;
-  background-color: var(--gray-700);
+  background-color: var(--blue-700);
 }
 
 .input::placeholder {
@@ -48,17 +50,17 @@
   padding: 18px;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: bold;
   border-radius: 5px;
   color: var(--white);
-  background-color: var(--green-500);
+  background-color: var(--blue-800);
 }
 
 .div-button {
   width: 100%;
   border-radius: 8px;
-  border: 2px solid white;
-  border-color: var(--green-300);
+  border: 2px solid var(--blue-800);
 }
 
 .button-transparent {
@@ -67,7 +69,8 @@
   padding: 18px;
   cursor: pointer;
   font-size: 16px;
-  color: var(--green-300);
+  font-weight: bold;
+  color: var(--blue-800);
 
   background-color: transparent;
 }
