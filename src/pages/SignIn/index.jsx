@@ -13,23 +13,25 @@ export function SignIn() {
       <span className={styles.title}>TOKENLAB</span>
 
       <div className={styles.box}>
-        <span className={styles.subtitle}>Acesse sua conta</span>
+        <span className={styles.subtitle}>Acessar sua conta</span>
 
         <form className={styles.form}>
-          <input className={styles.input} type="text" name="nome" placeholder="E-mail" />
-          <input className={styles.input} type="text" name="nome" placeholder="Senha" />
+          <input className={styles.input} type="text" name="e-mail" placeholder="Email" />
+          <input className={styles.input} type="password" name="senha" placeholder="Senha" />
 
-          <button className={styles.button}>Acessar</button>
+          <button className={styles.button}>Criar e acessar</button>
+        </form>
 
-          <div className={styles.footer}>
-            <span className={styles.subtitle}>Ainda não tem conta?</span>
+        <div className={styles.footer}>
+          <span className={styles.subtitle}>Ainda não tem conta?</span>
+          <div className={styles["div-button"]}>
             <button
               onClick={handleClick}
-              className={styles.button}>
+              className={styles["button-transparent"]}>
               Criar conta
             </button>
           </div>
-        </form>
+        </div>
 
       </div>
     </div>
