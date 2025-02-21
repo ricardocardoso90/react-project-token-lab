@@ -1,14 +1,29 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
+import { useNavigate } from "react-router-dom";
+
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const schema = yup.object({
+  email: yup.string()
+  .required("Informe o E-mail")
+  .email("Insira um e-mail válido."),
+  senha: yup.string().required("Informe a Senha"),
+});
 
 export function SignIn() {
   const navigation = useNavigate();
 
-  function handleClickAcessar() {
-    navigation('/home');
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+
+  function handleClickHome(data) {
+    console.log(data);
   };
 
-  function handleClickRegister() {
+  function handleClick() {
     navigation('/register');
   }
 
@@ -19,22 +34,32 @@ export function SignIn() {
       <div className={styles.box}>
         <span className={styles.subtitle}>Acessar sua conta</span>
 
-        <form className={styles.form}>
-          <input className={styles.input} type="text" name="e-mail" placeholder="E-mail" />
-          <input className={styles.input} type="password" name="senha" placeholder="Senha" />
+        <form onSubmit={handleSubmit(handleClickHome)} className={styles.form}>
+          <input
+            type="text"
+            placeholder="E-mail"
+            {...register("email")}
+            className={styles.input}
+          />
+          <span style={{ color: "red" }}>{errors.email?.message}</span>
 
-          <button
-            onClick={handleClickAcessar}
-            className={styles.button}>
-            Acessar
-          </button>
+          <input
+            type="password"
+            placeholder="Senha"
+            {...register('senha')}
+            className={styles.input}
+          />
+          <span style={{ color: "red" }}>{errors.senha?.message}</span>
+
+          <button type="submit" className={styles.button}>Acessar</button>
         </form>
 
         <div className={styles.footer}>
-          <span className={styles.subtitle}>Ainda não tem conta?</span>
+          <h2 className={styles.subtitle}>Ainda não tem conta?</h2>
+
           <div className={styles["div-button"]}>
             <button
-              onClick={handleClickRegister}
+              onClick={handleClick}
               className={styles["button-transparent"]}>
               Criar conta
             </button>

@@ -1,0 +1,13 @@
+.container {
+  height: 100vh;
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box-games {
+  width: 500px;
+  padding: 10px;
+  background-color: var(--gray-300);
+}
