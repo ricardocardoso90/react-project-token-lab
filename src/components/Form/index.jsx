@@ -9,7 +9,7 @@ export function Form() {
         className={styles.input}
       />
 
-      <button className={styles.button}>+</button>
+      <div className={styles.button}><button className={styles.buttonText}>+</button></div>
     </div>
   )
 }

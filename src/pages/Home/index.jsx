@@ -7,10 +7,10 @@ import { Tasks } from "../../components/Tasks";
 export function Home() {
   return (
     <div className={styles.container}>
-      <h2 style={{ marginTop: 50, marginBottom: 50 }}>tokenLab</h2>
+      <span className={styles.title}>token<span style={{ fontWeight: "bold" }}>lab</span></span>
 
       <div className={styles["box-games"]}>
-        <h2>Lista de Tarefas</h2>
+        <span className={styles.subtitle}>Lista de Tarefas</span>
         <Form />
         
         <Tasks />
