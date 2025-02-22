@@ -1,15 +1,23 @@
 import styles from "./styles.module.css";
 
-export function Form() {
+// eslint-disable-next-line react/prop-types
+export function Form({ handleClick, setNewTasks, newTasks }) {
   return (
     <div className={styles.form}>
       <input
         type="text"
-        placeholder="Digite alguma coisa..."
         className={styles.input}
+        value={newTasks}
+        onChange={e => setNewTasks(e.target.value)}
+        placeholder="Digite alguma coisa..."
       />
 
-      <div className={styles.button}><button className={styles.buttonText}>+</button></div>
+      <div
+        onClick={handleClick}
+        className={styles.button}
+      >
+        <button className={styles.buttonText} >+</button>
+      </div>
     </div>
   )
 }

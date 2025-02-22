@@ -1,11 +1,17 @@
 import styles from "./styles.module.css";
 
-export function Tasks() {
+// eslint-disable-next-line react/prop-types
+export function Tasks({ tasks, handleClick }) {
   return (
     <div className={styles.container}>
-      <span className={styles.name}>Lista de Tarefas</span>
+      <span className={styles.name}>{tasks}</span>
 
-      <div className={styles.button}><button className={styles.buttonText}>-</button></div>
+      <div
+        className={styles.button}
+        onClick={handleClick}
+      >
+        <button className={styles.buttonText}>-</button>
+      </div>
     </div>
   )
 }

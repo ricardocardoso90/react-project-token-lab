@@ -7,29 +7,30 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-}
 
-.name {
-  flex: 1;
-  font-size: 16px;
-  color: var(--gray-300);
-  margin-left: 16px;
-}
+  & .name {
+    flex: 1;
+    font-size: 16px;
+    color: var(--gray-300);
+    margin-left: 16px;
+  }
 
-.button {
-  overflow: hidden;
-  border-radius: 5px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.buttonText {
-  width: 56px;
-  height: 56px;
-  border: none;
-  font-size: 28px;
-  color: var(--white);
-  background-color: #E23C44;
+  & .button {
+    overflow: hidden;
+    border-radius: 5px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    & .buttonText {
+      width: 56px;
+      height: 56px;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      color: var(--white);
+      background-color: #E23C44;
+    }
+  }
 }
