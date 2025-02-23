@@ -3,8 +3,8 @@
 **Tecnologias utilizadas:**
 
 - [Yup]()
-- [React Hook Form]()
 - [JavaScript/React]()
+- [React Hook Form]()
 - [React Navigation]()
 
 ## Instalação:
