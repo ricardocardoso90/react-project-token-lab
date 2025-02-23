@@ -4,6 +4,7 @@
 
 - [Yup]()
 - [React Hook Form]()
+- [JavaScript/React]()
 - [React Navigation]()
 
 ## Instalação:
