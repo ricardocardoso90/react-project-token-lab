@@ -1,4 +1,5 @@
 import styles from "./styles.module.css";
+import { PiPlusCircleBold } from "react-icons/pi";
 
 // eslint-disable-next-line react/prop-types
 export function Form({ handleClick, setNewTasks, newTasks }) {
@@ -9,14 +10,14 @@ export function Form({ handleClick, setNewTasks, newTasks }) {
         className={styles.input}
         value={newTasks}
         onChange={e => setNewTasks(e.target.value)}
-        placeholder="Digite uma tarefa"
+        placeholder="Digite um evento"
       />
 
       <div
         onClick={handleClick}
         className={styles.button}
       >
-        <button className={styles.buttonText} >+</button>
+        <button className={styles.buttonText} ><PiPlusCircleBold size={22} color="white" /></button>
       </div>
     </div>
   )

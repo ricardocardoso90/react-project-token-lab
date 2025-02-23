@@ -3,6 +3,7 @@
 **Tecnologias utilizadas:**
 
 - [Yup]()
+- [React Icons]()
 - [JavaScript/React]()
 - [React Hook Form]()
 - [React Navigation]()

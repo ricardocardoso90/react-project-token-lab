@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export function AuthContextProvider({ children }) {
-  const listTasks = "Lista de tarefas";
+  const listTasks = "Lista de eventos";
 
   return (
     <AuthContext.Provider value={{ listTasks }}>

@@ -15,15 +15,19 @@ export function Home() {
 
   function handleTasksAdd() {
     if (tasks.includes(newTasks)) {
-      return alert("Adicione uma tarefa diferente.");
+      return alert("Adicione um evento diferente.");
     };
 
     newTasks === ""
-      ? alert("Digite uma tarefa!!")
+      ? alert("Digite um evento.")
       : setTasks(prevState => [...prevState, newTasks]);
 
     setNewTasks('');
   };
+
+  function handleTaskEdit(item) {
+    console.log(item);
+  }
 
   function handleTasksRemove(item) {
     setTasks(prevState => prevState.filter(tasks => tasks !== item));
@@ -47,7 +51,8 @@ export function Home() {
           <Tasks
             key={item}
             tasks={item}
-            handleClick={() => handleTasksRemove(item)}
+            handleClickEdit={() => handleTaskEdit(item)}
+            handleClickDel={() => handleTasksRemove(item)}
           />
         ))}
       </div>
