@@ -1,8 +1,26 @@
 import styles from "./styles.module.css";
-import { PiArticleBold, PiTrashBold } from "react-icons/pi";
+import { PiPencilSimpleBold, PiTrashBold } from "react-icons/pi";
+
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
+// import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 export function Tasks({ tasks, handleClickEdit, handleClickDel }) {
+  // const [newDate, setNewDate] = useState(new Date);
+
+  const newDateDay = format(new Date(), "EEEE", {
+    locale: ptBR,
+  });
+
+  const newDate = format(new Date(), "dd/MM/yyyy", {
+    locale: ptBR,
+  });
+
+  const newDateHours = format(new Date(), "H:m", {
+    locale: ptBR,
+  });
+
   return (
     <div className={styles.container}>
       <div className={styles["container-task"]}>
@@ -10,7 +28,7 @@ export function Tasks({ tasks, handleClickEdit, handleClickDel }) {
           onClick={handleClickEdit}
           className={styles["button-edit"]}
         >
-          <button className={styles["button-text-edit"]}><PiArticleBold size={21} /></button>
+          <button className={styles["button-text-edit"]}><PiPencilSimpleBold size={21} /></button>
         </div>
 
         <span className={styles.name}>{tasks}</span>
@@ -23,7 +41,7 @@ export function Tasks({ tasks, handleClickEdit, handleClickDel }) {
         </div>
 
       </div>
-      <span>Data/Horário da criação do evento: 23/02/2015 às 16:50 hrs</span>
+      <span className={styles["title-task"]}>{newDateDay}, {newDate} às {newDateHours} hrs</span>
     </div>
   )
 }

@@ -1,54 +1,59 @@
 .container {
   margin-bottom: 15px;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.container-task {
-  width: 100%;
-  border-radius: 5px;
-
-  background-color: #1F1E25;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  & .name {
-    flex: 1;
-    font-size: 16px;
-    color: var(--gray-300);
-    margin-left: 16px;
-  }
-
-  & .button-edit {
-    overflow: hidden;
+  .container-task {
+    width: 100%;
     border-radius: 5px;
 
+    background-color: #1F1E25;
+
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
 
-    & .button-text-edit {
-      width: 56px;
-      height: 56px;
-      border: none;
-      cursor: pointer;
-      font-size: 28px;
-      color: var(--white);
-      background-color: var(--blue-800);
+    & .name {
+      flex: 1;
+      font-size: 16px;
+      color: var(--gray-300);
+      margin-left: 16px;
     }
 
-    & .button-text-del {
-      width: 56px;
-      height: 56px;
-      border: none;
-      cursor: pointer;
-      font-size: 28px;
-      color: var(--white);
-      background-color: var(--red-700);
+    & .button-edit {
+      overflow: hidden;
+      border-radius: 5px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & .button-text-edit {
+        width: 56px;
+        height: 56px;
+        border: none;
+        cursor: pointer;
+        font-size: 28px;
+        color: var(--white);
+        background-color: var(--blue-800);
+      }
+
+      & .button-text-del {
+        width: 56px;
+        height: 56px;
+        border: none;
+        cursor: pointer;
+        font-size: 28px;
+        color: var(--white);
+        background-color: var(--red-700);
+      }
     }
+  }
+
+  .title-task {
+    margin-top: 5px;
+    color: var(--gray-300);
   }
 }
