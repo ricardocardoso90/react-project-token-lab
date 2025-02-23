@@ -4,23 +4,26 @@ import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useContext } from "react";
+import { AuthContext } from "../../Context";
 
 const schema = yup.object({
   email: yup.string()
-  .required("Informe o E-mail")
-  .email("Insira um e-mail válido."),
+    .required("Informe o E-mail")
+    .email("Insira um e-mail válido."),
   senha: yup.string().required("Informe a Senha"),
 });
 
 export function SignIn() {
   const navigation = useNavigate();
+  const { isLoadedRoutes } = useContext(AuthContext);
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
 
-  function handleClickHome(data) {
-    console.log(data);
+  function handleClickHome() {
+    isLoadedRoutes();
   };
 
   function handleClick() {

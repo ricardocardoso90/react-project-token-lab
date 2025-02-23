@@ -1,14 +1,11 @@
 // import { useState } from "react";
+import {useState } from "react";
 import styles from "./slyles.module.css";
-
-import { AuthContext } from "../../Context";
-import { useContext, useState } from "react";
 
 import { Form } from "../../components/Form";
 import { Tasks } from "../../components/Tasks";
 
 export function Home() {
-  const { listTasks } = useContext(AuthContext);
 
   const [tasks, setTasks] = useState([]);
   const [newTasks, setNewTasks] = useState('');
@@ -40,7 +37,7 @@ export function Home() {
       </span>
 
       <div className={styles["box-games"]}>
-        <span className={styles.subtitle}>{listTasks}</span>
+        <span className={styles.subtitle}>Lista de eventos</span>
         <Form
           newTasks={newTasks}
           setNewTasks={setNewTasks}

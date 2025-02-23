@@ -1,7 +1,15 @@
 .container {
+  margin-bottom: 15px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-task {
   width: 100%;
   border-radius: 5px;
-  margin-bottom: 10px;
+
   background-color: #1F1E25;
 
   display: flex;
@@ -15,22 +23,32 @@
     margin-left: 16px;
   }
 
-  & .button {
+  & .button-edit {
     overflow: hidden;
     border-radius: 5px;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    & .buttonText {
+
+    & .button-text-edit {
       width: 56px;
       height: 56px;
       border: none;
       cursor: pointer;
       font-size: 28px;
       color: var(--white);
-      background-color: #E23C44;
+      background-color: var(--blue-800);
+    }
+
+    & .button-text-del {
+      width: 56px;
+      height: 56px;
+      border: none;
+      cursor: pointer;
+      font-size: 28px;
+      color: var(--white);
+      background-color: var(--red-700);
     }
   }
 }
