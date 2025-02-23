@@ -9,7 +9,7 @@ export function Form({ handleClick, setNewTasks, newTasks }) {
         className={styles.input}
         value={newTasks}
         onChange={e => setNewTasks(e.target.value)}
-        placeholder="Digite alguma coisa..."
+        placeholder="Digite uma tarefa"
       />
 
       <div

@@ -1,23 +1,26 @@
 // import { useState } from "react";
-import { useState } from "react";
 import styles from "./slyles.module.css";
+
+import { AuthContext } from "../../Context";
+import { useContext, useState } from "react";
 
 import { Form } from "../../components/Form";
 import { Tasks } from "../../components/Tasks";
 
 export function Home() {
+  const { listTasks } = useContext(AuthContext);
+
   const [tasks, setTasks] = useState([]);
   const [newTasks, setNewTasks] = useState('');
 
   function handleTasksAdd() {
     if (tasks.includes(newTasks)) {
-      return alert("Tarefa já existente, adiciona outra diferente.");
+      return alert("Adicione uma tarefa diferente.");
     };
 
     newTasks === ""
-      ? alert("Campo vazio")
-      :
-      setTasks(prevState => [...prevState, newTasks]);
+      ? alert("Digite uma tarefa!!")
+      : setTasks(prevState => [...prevState, newTasks]);
 
     setNewTasks('');
   };
@@ -28,10 +31,12 @@ export function Home() {
 
   return (
     <div className={styles.container}>
-      <span className={styles.title}>token<span style={{ fontWeight: "bold" }}>lab</span></span>
+      <span className={styles.title}>token
+        <span style={{ fontWeight: "bold" }}>lab</span>
+      </span>
 
       <div className={styles["box-games"]}>
-        <span className={styles.subtitle}>Lista de Tarefas</span>
+        <span className={styles.subtitle}>{listTasks}</span>
         <Form
           newTasks={newTasks}
           setNewTasks={setNewTasks}
