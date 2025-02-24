@@ -10,6 +10,7 @@ export function Home() {
   const [newTasks, setNewTasks] = useState('');
 
   function handleTasksAdd() {
+
     if (tasks.includes(newTasks)) {
       return alert("Adicione um evento diferente.");
     };
@@ -17,14 +18,6 @@ export function Home() {
     newTasks === ""
       ? alert("Digite um evento.")
       : setTasks(prevState => [...prevState, newTasks]);
-
-
-    var todosArray = [...tasks];
-    for (var i in todosArray) {
-      if (todosArray[i].Tasks === newTasks) {
-        todosArray[i].title = tasks;
-      };
-    };
 
     setNewTasks('');
   };
@@ -34,10 +27,7 @@ export function Home() {
   };
 
   function handleTasksRemove(item) {
-    // setTasks(prevState => prevState.filter(tasks => tasks !== item));
-
-    const filtered = tasks.filter(task => task !== item);
-    setTasks(filtered);
+    setTasks(tasks.filter(task => task !== item));
   };
 
   return (
