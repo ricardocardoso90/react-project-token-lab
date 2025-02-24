@@ -1,14 +1,17 @@
 // import { useState } from "react";
-import {useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./slyles.module.css";
 
 import { Form } from "../../components/Form";
 import { Tasks } from "../../components/Tasks";
+import { AuthContext } from "../../Context";
 
 export function Home() {
-
   const [tasks, setTasks] = useState([]);
   const [newTasks, setNewTasks] = useState('');
+  const [storage, setStorage] = useState([]);
+
+  const { newDate } = useContext(AuthContext);
 
   function handleTasksAdd() {
     if (tasks.includes(newTasks)) {
@@ -20,6 +23,9 @@ export function Home() {
       : setTasks(prevState => [...prevState, newTasks]);
 
     setNewTasks('');
+
+    const newStorage = localStorage.setItem("mydate", newDate());
+    setStorage(prev => [...prev, newStorage]);
   };
 
   function handleTaskEdit(item) {
@@ -41,7 +47,7 @@ export function Home() {
         <Form
           newTasks={newTasks}
           setNewTasks={setNewTasks}
-          handleClick={handleTasksAdd}
+          handleClickAdd={handleTasksAdd}
         />
 
         {tasks.map((item) => (

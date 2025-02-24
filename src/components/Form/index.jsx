@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import { PiPlusCircleBold } from "react-icons/pi";
 
 // eslint-disable-next-line react/prop-types
-export function Form({ handleClick, setNewTasks, newTasks }) {
+export function Form({ handleClickAdd, setNewTasks, newTasks }) {
   return (
     <div className={styles.form}>
       <input
@@ -14,7 +14,7 @@ export function Form({ handleClick, setNewTasks, newTasks }) {
       />
 
       <div
-        onClick={handleClick}
+        onClick={handleClickAdd}
         className={styles.button}
       >
         <button className={styles.buttonText} ><PiPlusCircleBold size={22} color="white" /></button>
