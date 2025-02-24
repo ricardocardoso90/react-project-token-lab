@@ -5,7 +5,7 @@
   display: flex;
 
   & .input {
-    width: 100%;
+    flex: 1;
     height: 56px;
     padding: 16px;
     font-size: 16px;
@@ -17,16 +17,16 @@
       color: var(red);
     }
   }
-  
-  & .button {
+
+  & .button-confirm {
     overflow: hidden;
     border-radius: 5px;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    & .buttonText {
+
+    & .button-confirm-text {
       width: 56px;
       height: 56px;
       border: none;

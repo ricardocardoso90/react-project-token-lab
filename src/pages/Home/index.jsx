@@ -10,7 +10,6 @@ export function Home() {
   const [newTasks, setNewTasks] = useState('');
 
   function handleTasksAdd() {
-
     if (tasks.includes(newTasks)) {
       return alert("Adicione um evento diferente.");
     };
@@ -24,6 +23,10 @@ export function Home() {
 
   function handleTaskEdit(item) {
     setNewTasks(item);
+  };
+
+  function handleTaskConfirm() {
+    console.log(newTasks);
   };
 
   function handleTasksRemove(item) {
@@ -42,6 +45,7 @@ export function Home() {
           newTasks={newTasks}
           setNewTasks={setNewTasks}
           handleClickAdd={handleTasksAdd}
+          handleClickConfirm={handleTaskConfirm}
         />
 
         {tasks.map((item) => (

@@ -1,10 +1,21 @@
 import styles from "./styles.module.css";
-import { PiPlusCircleBold } from "react-icons/pi";
+import { PiCaretDownBold, PiPlusCircleBold } from "react-icons/pi";
 
 // eslint-disable-next-line react/prop-types
-export function Form({ handleClickAdd, setNewTasks, newTasks }) {
+export function Form({ handleClickAdd, setNewTasks, newTasks, handleClickConfirm }) {
   return (
     <div className={styles.form}>
+      <div
+        onClick={handleClickConfirm}
+        className={styles["button-confirm"]}
+      >
+        <button
+          className={styles["button-confirm-text"]}
+        >
+          <PiCaretDownBold size={21} />
+        </button>
+      </div>
+
       <input
         type="text"
         className={styles.input}
@@ -15,9 +26,13 @@ export function Form({ handleClickAdd, setNewTasks, newTasks }) {
 
       <div
         onClick={handleClickAdd}
-        className={styles.button}
+        className={styles["button-confirm"]}
       >
-        <button className={styles.buttonText} ><PiPlusCircleBold size={22} color="white" /></button>
+        <button
+          className={styles["button-confirm-text"]}
+        >
+          <PiPlusCircleBold size={21} />
+        </button>
       </div>
     </div>
   )
