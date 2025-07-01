@@ -1,9 +1,9 @@
 import { BrowserRouter } from "react-router-dom";
 
+import { useContext } from "react";
 import { AppRoutes } from "./app.routes";
 import { AuthRoutes } from "./auth.routes";
-import { useContext } from "react";
-import { AuthContext } from "../Context";
+import { AuthContext } from "../context";
 
 export function Routes() {
   const { isLoaded } = useContext(AuthContext);

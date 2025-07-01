@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import styles from "./styles.module.css";
 import { PiPencilSimpleBold, PiTrashBold } from "react-icons/pi";
+import { AuthContext } from "../../context";
 
 // eslint-disable-next-line react/prop-types
 export function Tasks({ tasks, handleClickEdit, handleClickDel }) {
-  const newDateStorage = localStorage.getItem("mydate");
+  // const newDateStorage = localStorage.getItem("mydate");
+  const { newDate } = useContext(AuthContext);
 
   return (
     <div className={styles.container}>
@@ -33,7 +36,7 @@ export function Tasks({ tasks, handleClickEdit, handleClickDel }) {
         </div>
 
       </div>
-      <span className={styles["title-task"]}>{newDateStorage} hrs</span>
+      <span className={styles["title-task"]}>{newDate()} hrs</span>
     </div>
   )
 }
