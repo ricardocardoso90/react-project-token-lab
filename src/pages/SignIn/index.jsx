@@ -58,7 +58,7 @@ export function SignIn() {
         </form>
 
         <div className={styles.footer}>
-          <h2 className={styles.subtitle}>Ainda não tem conta?</h2>
+          <h2 className={styles.subtitle}>xcklçfjçlasdkjfaklçsdjfçklajsdklfj</h2>
 
           <div className={styles["div-button"]}>
             <button
